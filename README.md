@@ -18,6 +18,9 @@ Open `index.html` in a browser, or serve the folder:
 python3 -m http.server 8000
 ```
 
+## Deploy on Vercel
+Import this repository at vercel.com/new (Framework preset: **Other**, no build command, output directory `./`). Every push to `main` redeploys automatically. `vercel.json` adds the security headers.
+
 ## Deploy with GitHub Pages
 Settings → Pages → Source: *Deploy from a branch* → Branch: `main`, folder `/ (root)`.
 

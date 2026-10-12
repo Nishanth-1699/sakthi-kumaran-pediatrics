@@ -18,11 +18,13 @@ SQL injection, server-side code execution or password attacks to target.
 | Mixed content | `upgrade-insecure-requests`; turn on **Enforce HTTPS** in Settings → Pages. |
 | Stored personal data | None. The only browser storage is the vaccine planner's date of birth, kept in the visitor's own browser. |
 
-## Limits of a static host
-GitHub Pages does not allow custom HTTP headers, so these can't be set from the site
-itself: `X-Frame-Options` / `frame-ancestors` (clickjacking), `Strict-Transport-Security`,
-and `Permissions-Policy`. If the site moves to a custom domain behind Cloudflare, Netlify
-or similar, add them there.
+## Server headers (Vercel)
+`vercel.json` adds HTTP security headers when the site is hosted on Vercel:
+`Content-Security-Policy` (including `frame-ancestors 'none'`), `Strict-Transport-Security`,
+`X-Frame-Options: DENY` (blocks clickjacking), `X-Content-Type-Options: nosniff`,
+`Referrer-Policy`, `Permissions-Policy` (camera, microphone, location and payment off),
+and cross-origin isolation headers. GitHub Pages ignores this file, so on GitHub Pages only
+the in-page policy applies.
 
 ## The biggest real risk: the GitHub account
 Anyone who controls the GitHub account can change the site. To protect it:

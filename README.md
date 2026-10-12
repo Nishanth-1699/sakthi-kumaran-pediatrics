@@ -22,7 +22,10 @@ python3 -m http.server 8000
 Settings → Pages → Source: *Deploy from a branch* → Branch: `main`, folder `/ (root)`.
 
 ## Appointment form
-The form was first built to save requests through Claude's artifact storage, which only works inside Claude. On any other host, **Send request** asks parents to use **Send on WhatsApp** (which pre-fills a message to +91 87544 42145) or to call. To store requests on this site, connect the form to a backend such as Formspree, Firebase or Google Sheets.
+The form checks the details, then opens WhatsApp with a ready-made message to the clinic (+91 87544 42145). Nothing is sent to or stored on a server. To collect requests in a list later, connect a backend such as Formspree, Firebase or Google Sheets, and update `connect-src` / `form-action` in the Content-Security-Policy to allow it.
+
+## Security
+See [SECURITY.md](SECURITY.md). The site has no database or server code, uses a strict Content-Security-Policy, and never inserts user input as HTML.
 
 ## Before going public
 - Get the clinic's approval for all photos. The waiting-area photo shows families' faces.
@@ -32,5 +35,8 @@ The form was first built to save requests through Claude's artifact storage, whi
 ## Structure
 ```
 index.html
+assets/css/      styles
+assets/js/       site script
 assets/images/   clinic photos and doctor portrait
+SECURITY.md      security notes
 ```

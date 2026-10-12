@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sakthi Kumaran Pediatrics</title>
+<meta name="description" content="Pediatric and neonatal care in Pattukkottai since 2015, led by Dr. Raja Ramalingam V, MD (Paed), Fellowship in Neonatology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Public+Sans:wght@400;500;600&family=Noto+Sans+Tamil:wght@500&display=swap">
+<style>
+/* Layout: a calm specialist-practice site. A deep-navy hero carries the doctor's portrait and the clinic's live
+   status like a monitor readout; below it, quiet white sections with hairline structure and one teal accent.
+   The warm crimson of the portrait is echoed only in live/urgent signals. */
+:root{
+  --bg:#F5F7FA;
+  --surface:#FFFFFF;
+  --surface-2:#EEF2F6;
+  --ink:#0C1A2A;
+  --muted:#4A5A6D;
+  --line:#DCE3EB;
+  --accent:#08776F;          /* clinical teal, 5.4:1 on white */
+  --accent-ink:#FFFFFF;
+  --accent-soft:#E2F3F1;
+  --signal:#B4233C;          /* crimson from the portrait: live + urgent only */
+  --signal-soft:#FBE7EA;
+  --ok:#1F8A4C;
+  --ok-soft:#E3F4EA;
+  --warn-soft:#FDF3DC;
+  /* hero stays dark in both themes */
+  --hero:#09172A;
+  --hero-2:#0F2340;
+  --hero-ink:#EDF3FA;
+  --hero-muted:#A3B5CA;
+  --hero-line:rgba(237,243,250,.12);
+  --glow:#2BC4B8;
+  --shadow:0 24px 60px -30px rgba(9,23,42,.45);
+  --display:"Schibsted Grotesk","Helvetica Neue",Arial,system-ui,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --tamil:"Noto Sans Tamil","Latha",system-ui,sans-serif;
+  --max:1200px;
+  --tap:48px;
+  --r:20px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#08111C;--surface:#0F1B29;--surface-2:#142336;--ink:#E8EEF5;--muted:#9DAEC1;--line:#1E2F44;
+  --accent:#2EC4B8;--accent-ink:#04201D;--accent-soft:#0E2E30;--signal:#FF6B81;--signal-soft:#3A1820;
+  --ok:#4CC985;--ok-soft:#10301F;--warn-soft:#352A10;--shadow:0 24px 60px -30px rgba(0,0,0,.8);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#08111C;--surface:#0F1B29;--surface-2:#142336;--ink:#E8EEF5;--muted:#9DAEC1;--line:#1E2F44;
+  --accent:#2EC4B8;--accent-ink:#04201D;--accent-soft:#0E2E30;--signal:#FF6B81;--signal-soft:#3A1820;
+  --ok:#4CC985;--ok-soft:#10301F;--warn-soft:#352A10;--shadow:0 24px 60px -30px rgba(0,0,0,.8);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+h1,h2,h3,h4{font-family:var(--display);margin:0;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--glow);outline-offset:3px;border-radius:8px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:16px;top:-80px;z-index:100;background:var(--ink);color:var(--bg);padding:12px 16px;border-radius:10px;font-weight:600}
+.skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+section{padding-block:clamp(64px,9vw,120px)}
+.head{display:grid;gap:14px;max-width:680px;margin-bottom:clamp(32px,5vw,56px)}
+.head h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:700}
+.head p{color:var(--muted);font-size:1.1rem}
+.label{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:.95rem;color:var(--accent)}
+.label::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--tap);padding:12px 22px;border-radius:12px;font-family:var(--body);font-weight:600;font-size:1rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-line{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn-line:hover{border-color:var(--accent)}
+.btn-glass{background:rgba(237,243,250,.08);color:var(--hero-ink);border-color:var(--hero-line)}
+.btn-glass:hover{border-color:rgba(237,243,250,.4)}
+.btn-hero{background:var(--glow);color:#03201E}
+.btn[disabled]{opacity:.6;cursor:progress;transform:none}
+
+/* ---------- header ---------- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--hero) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hero-line);color:var(--hero-ink)}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-height:var(--tap);min-width:0}
+.mark{width:40px;height:40px;border-radius:11px;background:linear-gradient(140deg,var(--glow),#0F6E8C);display:grid;place-items:center;flex:none}
+.mark svg{width:24px;height:24px}
+.brand b{display:block;font-family:var(--display);font-weight:700;font-size:1.08rem;line-height:1.15;letter-spacing:-.01em}
+.brand small{display:block;font-size:.78rem;color:var(--hero-muted);line-height:1.2}
+.links{display:flex;gap:2px;list-style:none;margin:0 0 0 auto;padding:0}
+.links a{display:flex;align-items:center;min-height:var(--tap);padding:0 14px;border-radius:10px;text-decoration:none;font-weight:500;font-size:.96rem;color:var(--hero-muted)}
+.links a:hover{color:var(--hero-ink);background:rgba(237,243,250,.06)}
+.burger{display:none;margin-left:auto;width:var(--tap);height:var(--tap);border-radius:12px;border:1px solid var(--hero-line);background:transparent;color:var(--hero-ink);cursor:pointer;place-items:center}
+@media (max-width:900px){
+  .burger{display:grid}
+  .links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:2px;background:var(--hero);border-bottom:1px solid var(--hero-line);padding:8px 16px 18px;margin:0}
+  .links.open{display:flex}
+  .links a{font-size:1.08rem}
+  .top .btn-hero{display:none}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 500px at 78% 10%,rgba(43,196,184,.20),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(30,90,160,.35),transparent 60%),linear-gradient(180deg,var(--hero),var(--hero-2));color:var(--hero-ink);padding-block:clamp(40px,7vw,96px) 0}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--hero-line) 1px,transparent 1px),linear-gradient(90deg,var(--hero-line) 1px,transparent 1px);background-size:56px 56px;mask:radial-gradient(ellipse 80% 70% at 60% 30%,#000 30%,transparent 80%);-webkit-mask:radial-gradient(ellipse 80% 70% at 60% 30%,#000 30%,transparent 80%);opacity:.5;pointer-events:none}
+.hero .wrap{position:relative}
+.hero .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero-copy{display:grid;gap:26px;min-width:0}
+.live{justify-self:start;display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 12px;border-radius:999px;background:rgba(237,243,250,.07);border:1px solid var(--hero-line);font-size:.92rem;font-variant-numeric:tabular-nums}
+.live .dot{width:9px;height:9px;border-radius:50%;background:#3EE08F;box-shadow:0 0 0 0 rgba(62,224,143,.6);animation:ping 2s infinite}
+.live.shut .dot{background:#FF6B81;animation:none}
+@keyframes ping{100%{box-shadow:0 0 0 10px rgba(62,224,143,0)}}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.9rem);font-weight:800;letter-spacing:-.035em;line-height:1}
+.lede{font-size:1.15rem;color:var(--hero-muted);max-width:52ch}
+.lede strong{color:var(--hero-ink);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.num{font-variant-numeric:tabular-nums}
+
+.portrait-wrap{position:relative;min-width:0;justify-self:center;width:100%;max-width:440px}
+.portrait{position:relative;margin:0;border-radius:28px;padding:1px;background:linear-gradient(160deg,rgba(43,196,184,.9),rgba(237,243,250,.15) 40%,rgba(180,35,60,.6));box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.portrait img{display:block;width:100%;aspect-ratio:464/458;object-fit:cover;border-radius:27px}
+.portrait figcaption{position:absolute;left:16px;right:16px;bottom:16px;padding:14px 16px;border-radius:16px;background:rgba(9,23,42,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--hero-line);display:grid;gap:2px}
+.portrait figcaption b{font-family:var(--display);font-size:1.2rem;font-weight:700}
+.portrait figcaption span{font-size:.88rem;color:var(--hero-muted)}
+.chip-float{position:absolute;top:0;right:24px;transform:translateY(-50%);display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:var(--hero-ink);color:#09172A;box-shadow:var(--shadow);font-size:.88rem;line-height:1.2}
+.chip-float b{font-family:var(--display);font-size:1.35rem;font-weight:800}
+.chip-float .stars{color:#E3A008;letter-spacing:1px}
+@media (max-width:920px){.hero .hero-grid{grid-template-columns:1fr}.portrait-wrap{justify-self:start;max-width:420px}}
+@media (max-width:480px){.chip-float{right:16px}}
+.portrait-wrap{margin-top:28px}
+
+.ecg{display:block;width:100%;height:56px;margin-top:clamp(36px,5vw,56px)}
+.ecg path{fill:none;stroke:var(--glow);stroke-width:2;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1800;stroke-dashoffset:1800;animation:trace 2.6s ease-out .3s forwards}
+@keyframes trace{to{stroke-dashoffset:0}}
+.metrics{position:relative;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hero-line)}
+.metric{padding:22px 20px 26px;display:grid;gap:4px;border-left:1px solid var(--hero-line);min-width:0}
+.metric:first-child{border-left:0;padding-left:0}
+.metric b{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.metric span{font-size:.9rem;color:var(--hero-muted)}
+@media (max-width:760px){.metrics{grid-template-columns:repeat(2,1fr)}.metric{border-left:0;padding-left:0;border-top:1px solid var(--hero-line)}.metric:nth-child(-n+2){border-top:0}}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:grid;gap:12px;align-content:start;min-width:0;transition:border-color .2s ease}
+.svc:hover{border-color:color-mix(in srgb,var(--accent) 50%,var(--line))}
+.svc .ic{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.svc .ic svg{width:24px;height:24px}
+.svc h3{font-size:1.3rem;font-weight:700}
+.svc p{color:var(--muted);font-size:.98rem}
+.svc .for{font-size:.85rem;font-weight:600;color:var(--muted)}
+.svc.feature{grid-row:span 2;background:var(--hero);color:var(--hero-ink);border-color:transparent;padding:0;overflow:hidden;align-content:stretch;grid-template-rows:auto 1fr}
+.svc.feature img{width:100%;height:100%;min-height:220px;max-height:340px;object-fit:cover;display:block}
+.svc.feature .in{padding:26px;display:grid;gap:12px;align-content:start}
+.svc.feature p,.svc.feature .for{color:var(--hero-muted)}
+.svc.feature .ic{background:rgba(43,196,184,.15);color:var(--glow)}
+@media (max-width:980px){.svc-grid{grid-template-columns:repeat(2,1fr)}.svc.feature{grid-column:span 2;grid-row:auto;grid-template-columns:1fr 1fr;grid-template-rows:auto}.svc.feature img{max-height:none}}
+@media (max-width:620px){.svc-grid{grid-template-columns:1fr}.svc.feature{grid-column:auto;grid-template-columns:1fr}}
+
+/* ---------- doctors ---------- */
+.doctors{background:var(--surface);border-block:1px solid var(--line)}
+.doc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,80px);align-items:start}
+.doc-card{background:var(--bg);border:1px solid var(--line);border-radius:28px;padding:clamp(20px,3vw,28px);display:grid;gap:22px}
+.doc-id{display:flex;gap:18px;align-items:center}
+.doc-id img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:35% 20%;flex:none;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--accent)}
+.doc-id h3{font-size:1.5rem;font-weight:700}
+.doc-id p{color:var(--muted);font-size:.95rem}
+.tamil{font-family:var(--tamil);font-size:.92rem;color:var(--muted)}
+.creds{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.creds li{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 0;border-top:1px solid var(--line);font-size:.98rem}
+.creds li span:first-child{color:var(--muted)}
+.creds li span:last-child{font-weight:600}
+@media (max-width:460px){.creds li{grid-template-columns:1fr;gap:2px}}
+.doc-copy{display:grid;gap:26px;min-width:0}
+.doc-copy h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:700}
+.doc-copy .body{color:var(--muted);font-size:1.1rem;max-width:58ch}
+.path{list-style:none;margin:0;padding:0;position:relative;display:grid;gap:22px}
+.path::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.path li{position:relative;padding-left:36px;display:grid;gap:2px}
+.path li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.path li.now::before{background:var(--accent)}
+.path .yr{font-family:var(--display);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.path p{color:var(--muted)}
+.path b{color:var(--ink);font-weight:600}
+blockquote{margin:0;padding:22px 24px;border-radius:var(--r);background:var(--accent-soft);display:grid;gap:8px}
+blockquote p{font-family:var(--display);font-size:clamp(1.25rem,2.4vw,1.55rem);font-weight:600;line-height:1.25;letter-spacing:-.01em}
+blockquote cite{font-style:normal;font-size:.9rem;color:var(--muted)}
+@media (max-width:900px){.doc{grid-template-columns:1fr}}
+
+.gallery{margin-top:clamp(48px,7vw,80px);display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:14px}
+.gallery figure{margin:0;position:relative;overflow:hidden;border-radius:18px;background:var(--surface-2)}
+.gallery figure:first-child{grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.04)}
+.gallery figcaption{position:absolute;left:12px;bottom:12px;padding:6px 12px;border-radius:999px;background:rgba(9,23,42,.75);color:#EDF3FA;font-size:.85rem;font-weight:500}
+@media (max-width:700px){.gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px 160px}.gallery figure:first-child{grid-column:span 2;grid-row:auto}}
+
+/* ---------- parents ---------- */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;padding:6px;border-radius:14px;background:var(--surface-2);width:fit-content;max-width:100%;margin-bottom:20px}
+.tab{min-height:var(--tap);padding:10px 18px;border-radius:10px;border:0;background:transparent;color:var(--muted);font:600 .98rem var(--body);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 2px 8px -4px rgba(9,23,42,.3)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3.5vw,36px)}
+.vax-top{display:flex;flex-wrap:wrap;gap:16px;align-items:end;justify-content:space-between;margin-bottom:22px}
+.vax-top label{max-width:300px}
+.vax-sum{display:flex;gap:8px;flex-wrap:wrap}
+.vax-sum span{font-size:.9rem;font-weight:600;padding:8px 14px;border-radius:999px}
+.vax-list{list-style:none;margin:0;padding:0;display:grid}
+.vax{display:grid;grid-template-columns:130px 1fr auto;gap:16px;align-items:center;padding:14px 4px;border-top:1px solid var(--line)}
+.vax .when{font-family:var(--display);font-weight:700}
+.vax .names{color:var(--muted);font-size:.96rem;min-width:0}
+.vax .tag{font-size:.86rem;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap;font-variant-numeric:tabular-nums;background:var(--surface-2)}
+.st-done .tag{background:var(--ok-soft);color:var(--ok)}
+.st-due{background:var(--warn-soft);border-radius:12px;padding-inline:12px;border-top-color:transparent}
+.st-due .tag{background:#E3A008;color:#241900}
+.st-next .tag{background:var(--accent-soft);color:var(--accent)}
+@media (max-width:640px){.vax{grid-template-columns:1fr auto}.vax .names{grid-column:1/-1;grid-row:2}}
+.small{font-size:.9rem;color:var(--muted)}
+.flags{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;list-style:none;margin:18px 0 0;padding:0}
+.flags li{display:flex;gap:12px;align-items:flex-start;padding:16px;border-radius:14px;background:var(--signal-soft)}
+.flags li::before{content:"!";flex:none;width:26px;height:26px;border-radius:50%;background:var(--signal);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.calm{margin-top:16px;padding:16px;border-radius:14px;background:var(--ok-soft)}
+@media (max-width:640px){.flags{grid-template-columns:1fr}}
+.mile{display:grid;gap:0}
+.mile details{border-top:1px solid var(--line)}
+.mile details:last-of-type{border-bottom:1px solid var(--line)}
+.mile summary{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;font-family:var(--display);font-weight:700;font-size:1.15rem;list-style:none}
+.mile summary::-webkit-details-marker{display:none}
+.mile summary::after{content:"+";font-size:1.4rem;font-weight:500;color:var(--accent)}
+.mile details[open] summary::after{content:"−"}
+.mile ul{margin:0 0 16px;padding-left:20px;color:var(--muted)}
+
+/* ---------- contact ---------- */
+.contact{background:var(--surface);border-top:1px solid var(--line)}
+.c-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,3vw,32px);align-items:start}
+.c-left{display:grid;gap:16px;min-width:0}
+.clock{background:linear-gradient(180deg,var(--hero),var(--hero-2));color:var(--hero-ink);border-radius:24px;padding:clamp(20px,3vw,28px);display:grid;gap:14px}
+.clock .r1{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:.9rem;color:var(--hero-muted)}
+.bigclock{font-family:var(--display);font-weight:700;font-size:clamp(2.8rem,7vw,3.8rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.bigclock small{font-size:.35em;font-weight:600;color:var(--hero-muted);letter-spacing:0;margin-left:6px}
+.stateline{font-size:1.02rem}
+.week{display:grid;gap:7px}
+.wd{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center;font-size:.84rem;color:var(--hero-muted)}
+.wd.today{color:var(--hero-ink);font-weight:600}
+.bar{position:relative;height:10px;border-radius:5px;background:rgba(237,243,250,.08)}
+.seg{position:absolute;top:0;bottom:0;border-radius:5px;background:rgba(43,196,184,.45)}
+.wd.today .seg{background:var(--glow)}
+.nowmark{position:absolute;top:-5px;bottom:-5px;width:3px;border-radius:2px;background:#FF6B81;box-shadow:0 0 10px #FF6B81}
+.axis{display:grid;grid-template-columns:40px 1fr;gap:10px;font-size:.74rem;color:var(--hero-muted)}
+.axis div{display:flex;justify-content:space-between}
+.place{border:1px solid var(--line);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:150px 1fr;background:var(--bg)}
+.place img{width:100%;height:100%;object-fit:cover;display:block;min-height:210px}
+.place .t{padding:20px;display:grid;gap:10px;align-content:start;min-width:0}
+.place h3{font-size:1.25rem;font-weight:700}
+@media (max-width:480px){.place{grid-template-columns:1fr}.place img{min-height:0;aspect-ratio:16/9}}
+.urgent{border-radius:18px;padding:16px 18px;background:var(--signal-soft);display:grid;gap:4px;border-left:4px solid var(--signal)}
+.urgent b{font-family:var(--display);font-size:1.15rem;color:var(--signal)}
+
+form.book{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:clamp(20px,3.5vw,32px);display:grid;gap:16px;min-width:0}
+form.book h3{font-size:1.6rem;font-weight:700}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:540px){.fgrid{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-weight:500;font-size:.95rem}
+.opt{font-weight:400;color:var(--muted)}
+input,select,textarea{font:inherit;font-size:1rem;min-height:var(--tap);padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);width:100%;min-width:0}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+textarea{min-height:96px;resize:vertical}
+[aria-invalid="true"]{border-color:var(--signal)}
+.err{color:var(--signal);font-size:.88rem;font-weight:500}
+.choice{display:flex;flex-wrap:wrap;gap:8px;border:0;padding:0;margin:0}
+.choice legend{font-weight:500;font-size:.95rem;margin-bottom:6px;padding:0}
+.choice label{display:flex;align-items:center;gap:8px;min-height:var(--tap);padding:0 16px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:500}
+.choice input{width:18px;height:18px;min-height:0;accent-color:var(--accent)}
+.choice label:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.banner{border-radius:14px;padding:14px 16px;font-size:.96rem}
+.banner.ok{background:var(--ok-soft)}.banner.warn{background:var(--warn-soft)}.banner.bad{background:var(--signal-soft)}
+.mine{display:grid;gap:10px}
+.mine h4{font-size:1.1rem;font-weight:700}
+.req{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:12px 14px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-size:.94rem}
+.req .meta{color:var(--muted)}
+.badge{align-self:start;font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:999px;white-space:nowrap;background:var(--surface-2)}
+.b-new{background:var(--accent-soft);color:var(--accent)}.b-confirmed{background:var(--ok-soft);color:var(--ok)}.b-cancelled{background:var(--signal-soft);color:var(--signal)}
+
+.desk{margin-top:24px;border:1px solid var(--accent);border-radius:24px;padding:clamp(18px,3vw,28px);display:grid;gap:14px;background:var(--surface)}
+.desk-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center}
+.desk-head h3{font-size:1.4rem;font-weight:700}
+.desk-list{display:grid;gap:10px}
+.drow{display:grid;grid-template-columns:1.3fr 1fr auto;gap:12px;align-items:center;padding:14px 16px;border-radius:14px;background:var(--bg);border:1px solid var(--line)}
+.drow b{font-weight:600}
+.drow .meta{color:var(--muted);font-size:.9rem}
+.drow select{min-width:160px}
+@media (max-width:720px){.drow{grid-template-columns:1fr}}
+.empty{padding:18px;border-radius:14px;background:var(--bg);border:1px dashed var(--line);color:var(--muted)}
+
+footer{background:var(--hero);color:var(--hero-ink);padding-block:40px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px 40px;align-items:flex-start}
+footer p{color:var(--hero-muted);font-size:.92rem}
+footer b{font-family:var(--display);font-size:1.15rem;color:var(--hero-ink)}
+footer .tamil{color:var(--hero-muted)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-weight:500;z-index:80;max-width:calc(100% - 32px)}
+</style>
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Sakthi Kumaran Pediatrics, home">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M2.5 13h4l2-5.5 3.2 10 2.8-7 1.8 2.5h5.2" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span><b>Sakthi Kumaran</b><small>Pediatrics &amp; Neonatal Care</small></span>
+    </a>
+    <nav aria-label="Main" style="display:contents">
+      <ul class="links" id="links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#parents">Parent resources</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-hero" href="#book">Book a visit</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<!-- HOME -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="live" id="live" role="status"><span class="dot" aria-hidden="true"></span><span id="liveText">Checking clinic hours</span></span>
+      <h1 id="hero-title">Specialist care for newborns and children in Pattukkottai</h1>
+      <p class="lede">Led by <strong>Dr. Raja Ramalingam V, MD (Paed)</strong>, with a Fellowship in Neonatology. Newborn intensive care, vaccinations, check-ups and same-day sick visits, open every day of the week.</p>
+      <div class="row">
+        <a class="btn btn-hero" href="#book">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+          Request an appointment
+        </a>
+        <a class="btn btn-glass" href="tel:+918754442145" aria-label="Call the clinic on +91 87544 42145">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span class="num">+91 87544 42145</span>
+        </a>
+      </div>
+    </div>
+    <div class="portrait-wrap">
+      <figure class="portrait">
+        <img src="assets/images/doctor.jpg" alt="Portrait of Dr. Raja Ramalingam V">
+        <figcaption><b>Dr. Raja Ramalingam V</b><span>Consultant Pediatrician &amp; Neonatologist</span></figcaption>
+      </figure>
+      <div class="chip-float"><b>4.9</b><span><span class="stars" aria-hidden="true">★★★★★</span><br>209 Google reviews</span></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <svg class="ecg" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0 34 H300 l10-8 10 8 H360 l6 6 10-34 10 44 8-16 H560 l10-8 10 8 H700 l6 6 10-34 10 44 8-16 H900 l10-8 10 8 H1040 l6 6 10-34 10 44 8-16 H1200"/></svg>
+    <div class="metrics" role="list" aria-label="Clinic at a glance">
+      <div class="metric" role="listitem"><b>Since 2015</b><span>serving Pattukkottai families</span></div>
+      <div class="metric" role="listitem"><b class="num">6 am – 10 pm</b><span>open all 7 days</span></div>
+      <div class="metric" role="listitem"><b>NICU</b><span>newborn intensive care on site</span></div>
+      <div class="metric" role="listitem"><b>0 – 18 yrs</b><span>newborns to teenagers</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" aria-labelledby="svc-title">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Services</span>
+      <h2 id="svc-title">Complete pediatric care, from the first hour of life</h2>
+      <p>One specialist team for newborn emergencies, routine care and everything in between.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc feature">
+        <img src="assets/images/nicu.jpg" alt="The clinic's NICU with radiant warmers and a phototherapy unit" loading="lazy">
+        <div class="in">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 3 10 3-7 2 2h4"/></svg></span>
+          <h3>Neonatal intensive care</h3>
+          <p>Radiant warmers, oxygen support and continuous monitoring with round-the-clock nursing for premature and unwell newborns, under a neonatology-trained pediatrician.</p>
+          <span class="for">For newborns, first 28 days</span>
+        </div>
+      </article>
+      <article class="svc">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></span>
+        <h3>Jaundice phototherapy</h3>
+        <p>On-site blue-light treatment for newborn jaundice with regular bilirubin monitoring.</p>
+        <span class="for">For newborns</span>
+      </article>
+      <article class="svc">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4M17 7l3-3M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5M9 11l4 4M5 19l-3 3M14 4l6 6"/></svg></span>
+        <h3>Vaccinations</h3>
+        <p>The full childhood immunisation schedule. See what is due next in the vaccine planner.</p>
+        <span class="for">Birth to 12 years</span>
+      </article>
+      <article class="svc">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 16v-3M10 16V9M14 16v-5M18 16V5"/></svg></span>
+        <h3>Growth &amp; development</h3>
+        <p>Height, weight and milestone assessment, with feeding and nutrition guidance.</p>
+        <span class="for">All ages</span>
+      </article>
+      <article class="svc">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg></span>
+        <h3>Fever &amp; infections</h3>
+        <p>Same-day assessment of fevers, coughs, stomach upsets and rashes.</p>
+        <span class="for">All ages</span>
+      </article>
+      <article class="svc">
+        <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8M2 16h20M6 10V7a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3"/></svg></span>
+        <h3>In-patient ward</h3>
+        <p>Admission and observation for children who need IV fluids or closer monitoring.</p>
+        <span class="for">All ages</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section class="doctors" id="doctors" aria-labelledby="doc-title">
+  <div class="wrap">
+    <div class="doc">
+      <div class="doc-card">
+        <div class="doc-id">
+          <img src="assets/images/doctor.jpg" alt="">
+          <div>
+            <h3>Dr. Raja Ramalingam V</h3>
+            <p>Consultant Pediatrician &amp; Neonatologist</p>
+            <p class="tamil" lang="ta">டாக்டர் வி. ராஜாராமலிங்கம்</p>
+          </div>
+        </div>
+        <ul class="creds" aria-label="Qualifications">
+          <li><span>Medical degree</span><span>MBBS, JJM Medical College</span></li>
+          <li><span>Specialisation</span><span>MD (Pediatrics)</span></li>
+          <li><span>Sub-specialty</span><span>Fellowship in Neonatology</span></li>
+          <li><span>Practice</span><span>Founder, Sakthi Kumaran Pediatrics &amp; Neonatal Care Hospital (2015)</span></li>
+        </ul>
+        <a class="btn btn-main" href="#book">Book with Dr. Raja Ramalingam</a>
+      </div>
+      <div class="doc-copy">
+        <span class="label">Doctors</span>
+        <h2 id="doc-title">A specialist who knows your family</h2>
+        <p class="body">Dr. Raja Ramalingam V founded the hospital in 2015 so that families in and around Pattukkottai could reach a pediatric specialist without travelling to a city. His training in neonatology means premature and critically unwell newborns are cared for here, close to home.</p>
+        <ol class="path" aria-label="Training and career">
+          <li><span class="yr">1998</span><p><b>MBBS</b>, JJM Medical College</p></li>
+          <li><span class="yr">MD</span><p><b>Post-graduate degree in Pediatrics</b></p></li>
+          <li><span class="yr">Fellowship</span><p><b>Neonatology</b>: newborn and premature-baby intensive care</p></li>
+          <li class="now"><span class="yr">2015</span><p><b>Founded Sakthi Kumaran Pediatrics &amp; Neonatal Care Hospital</b></p></li>
+        </ol>
+        <blockquote><p>“He treats every kid more than a patient, like a family.”</p><cite>A parent, Google review</cite></blockquote>
+      </div>
+    </div>
+
+    <div class="gallery" aria-label="Inside the hospital">
+      <figure><img src="assets/images/nurses.jpg" alt="Two nurses caring for a newborn in a warmer" loading="lazy"><figcaption>Nursing team</figcaption></figure>
+      <figure><img src="assets/images/nicu.jpg" alt="NICU bay with warmers and monitors" loading="lazy"><figcaption>NICU</figcaption></figure>
+      <figure><img src="assets/images/waiting.jpg" alt="Families in the waiting area" loading="lazy"><figcaption>Waiting area</figcaption></figure>
+      <figure><img src="assets/images/entrance.jpg" alt="Hospital entrance with signboard" loading="lazy"><figcaption>Entrance</figcaption></figure>
+      <figure><img src="assets/images/building.jpg" alt="Hospital building" loading="lazy"><figcaption>Building</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT RESOURCES -->
+<section id="parents" aria-labelledby="par-title">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Parent resources</span>
+      <h2 id="par-title">Guidance between visits</h2>
+      <p>Quick references for the questions parents ask most. They don’t replace a consultation. If you are unsure, call the clinic.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Parent resources">
+      <button class="tab" role="tab" id="t-vax" aria-controls="p-vax" aria-selected="true">Vaccine planner</button>
+      <button class="tab" role="tab" id="t-fever" aria-controls="p-fever" aria-selected="false" tabindex="-1">Fever warning signs</button>
+      <button class="tab" role="tab" id="t-mile" aria-controls="p-mile" aria-selected="false" tabindex="-1">Milestones</button>
+    </div>
+    <div class="panel" role="tabpanel" id="p-vax" aria-labelledby="t-vax">
+      <div class="vax-top">
+        <label for="dob">Child’s date of birth<input type="date" id="dob" aria-describedby="dobHint"><span class="small" id="dobHint" hidden>Showing an example 5-month-old. Enter your child’s date of birth.</span></label>
+        <div class="vax-sum" id="vaxSum" aria-live="polite"></div>
+      </div>
+      <ul class="vax-list" id="vaxList"></ul>
+      <p class="small" style="margin-top:16px">Based on the Indian Academy of Pediatrics schedule. The doctor will confirm the exact vaccines for your child.</p>
+    </div>
+    <div class="panel" role="tabpanel" id="p-fever" aria-labelledby="t-fever" hidden>
+      <h3 style="font-size:1.5rem;font-weight:700">Come in straight away, or call 108, if your child:</h3>
+      <ul class="flags">
+        <li>is under 3 months old with a temperature of 38°C or more</li>
+        <li>is breathing fast, grunting, or the chest pulls in with each breath</li>
+        <li>has a fit (seizure), or is very drowsy and hard to wake</li>
+        <li>has a rash that does not fade when pressed with a glass</li>
+        <li>is not feeding, or has had no wet nappy for 8 hours</li>
+        <li>has had a fever for more than 3 days</li>
+      </ul>
+      <div class="calm"><b>At home, if your child is playing and drinking:</b> light clothing, plenty of fluids or breastfeeds, and fever medicine only at the dose your doctor prescribed.</div>
+    </div>
+    <div class="panel mile" role="tabpanel" id="p-mile" aria-labelledby="t-mile" hidden>
+      <details open><summary>2 months</summary><ul><li>Smiles back at you</li><li>Follows your face with their eyes</li><li>Lifts head briefly during tummy time</li></ul></details>
+      <details><summary>6 months</summary><ul><li>Rolls over both ways</li><li>Sits with support and reaches for toys</li><li>Babbles and turns towards sounds</li></ul></details>
+      <details><summary>12 months</summary><ul><li>Pulls to stand, may take first steps</li><li>Says “amma” or “appa” with meaning</li><li>Waves bye-bye; picks up small objects with finger and thumb</li></ul></details>
+      <details><summary>2 years</summary><ul><li>Runs and kicks a ball</li><li>Uses two-word phrases</li><li>Points to body parts and pictures</li></ul></details>
+      <details><summary>4 years</summary><ul><li>Hops on one foot</li><li>Tells simple stories and knows some colours</li><li>Plays cooperatively with other children</li></ul></details>
+      <p class="small" style="margin-top:14px">Every child develops at their own pace. If your child loses a skill they once had, mention it at your next visit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="con-title">
+  <div class="wrap">
+    <div class="head">
+      <span class="label">Contact</span>
+      <h2 id="con-title">Visit, call or request an appointment</h2>
+    </div>
+    <div class="c-grid">
+      <div class="c-left">
+        <div class="clock">
+          <div class="r1"><span>Clinic hours · India time</span><span id="today">Today</span></div>
+          <div class="bigclock" aria-hidden="true"><span id="bigclock">--:--</span><small>IST</small></div>
+          <p class="stateline" id="stateline" aria-live="polite">Checking hours</p>
+          <div class="week" id="week" aria-label="Weekly hours: every day 6:00 am to 3:30 pm and 4:30 pm to 10:00 pm"></div>
+          <div class="axis" aria-hidden="true"><span></span><div><span>12a</span><span>6a</span><span>12p</span><span>6p</span><span>12a</span></div></div>
+          <p style="font-size:.95rem">Every day · <b class="num">6:00 am – 3:30 pm</b> and <b class="num">4:30 pm – 10:00 pm</b></p>
+        </div>
+        <div class="place">
+          <img src="assets/images/entrance.jpg" alt="Hospital entrance with the doctor's name on the signboard" loading="lazy">
+          <div class="t">
+            <h3>Find us</h3>
+            <p>Manickam Colony, Pattukkottai,<br>Tamil Nadu 614601</p>
+            <p class="num" id="phoneTxt" style="font-weight:600">+91 87544 42145</p>
+            <div class="row">
+              <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=SAKTHI+KUMARAN+PEDIATRICS+AND+NEONATAL+CARE+HOSPITAL+Pattukkottai" target="_blank" rel="noopener">Open in Maps<span class="sr"> (opens in a new tab)</span></a>
+              <button class="btn btn-line" type="button" id="copyPhone">Copy number</button>
+            </div>
+          </div>
+        </div>
+        <div class="urgent" role="note"><b>Emergency? Call 108</b><span>For breathing difficulty, a seizure, or a child who will not wake, call 108 or go to the nearest emergency department.</span></div>
+      </div>
+
+      <div style="min-width:0">
+        <form class="book" id="book" novalidate aria-labelledby="book-title">
+          <h3 id="book-title">Request an appointment</h3>
+          <p class="small">Send your details and the clinic will call to confirm a time. A request is confirmed only when the clinic calls back.</p>
+          <div id="formBanner" class="banner warn" hidden></div>
+          <div class="fgrid">
+            <label for="f-parent">Parent’s name<input id="f-parent" autocomplete="name" required aria-describedby="e-parent"><span class="err" id="e-parent" hidden>Enter your name.</span></label>
+            <label for="f-phone">Mobile number<input id="f-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="98765 43210" required aria-describedby="e-phone"><span class="err" id="e-phone" hidden>Enter a 10-digit mobile number.</span></label>
+            <label for="f-child">Child’s name<input id="f-child" required aria-describedby="e-child"><span class="err" id="e-child" hidden>Enter your child’s name.</span></label>
+            <label for="f-age">Child’s age <span class="opt">(e.g. 8 months)</span><input id="f-age"></label>
+            <label for="f-date">Preferred date<input id="f-date" type="date" required aria-describedby="e-date"><span class="err" id="e-date" hidden>Choose today or a later date.</span></label>
+            <label for="f-type">Visit type
+              <select id="f-type"><option>Sick visit</option><option>Vaccination</option><option>Check-up / growth</option><option>Newborn check</option><option>Follow-up</option></select>
+            </label>
+          </div>
+          <fieldset class="choice">
+            <legend>Preferred session</legend>
+            <label><input type="radio" name="sess" value="Morning (6 am – 12 pm)" checked>Morning</label>
+            <label><input type="radio" name="sess" value="Afternoon (12 – 3:30 pm)">Afternoon</label>
+            <label><input type="radio" name="sess" value="Evening (4:30 – 10 pm)">Evening</label>
+          </fieldset>
+          <label for="f-reason">Reason for visit <span class="opt">(optional)</span><textarea id="f-reason" placeholder="e.g. Fever since yesterday, 6-month vaccines due"></textarea></label>
+          <div class="row">
+            <button class="btn btn-main" type="submit" id="sendBtn">Send request</button>
+            <a class="btn btn-line" id="waBtn" href="https://wa.me/918754442145" target="_blank" rel="noopener">Send on WhatsApp<span class="sr"> (opens in a new tab)</span></a>
+          </div>
+          <div class="mine" id="mine" hidden><h4>Your requests</h4><div id="mineList"></div></div>
+        </form>
+
+        <div class="desk" id="desk" hidden aria-labelledby="desk-title">
+          <div class="desk-head">
+            <h3 id="desk-title">Front desk</h3>
+            <div class="tabs" role="group" aria-label="Filter requests" style="margin:0">
+              <button class="tab" type="button" data-f="open" aria-pressed="true" aria-selected="true">Open</button>
+              <button class="tab" type="button" data-f="all" aria-pressed="false" aria-selected="false">All</button>
+            </div>
+          </div>
+          <p class="small">Visible only to you and editors of this page. Update the status after you call the parent.</p>
+          <div class="desk-list" id="deskList" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:grid;gap:6px">
+      <b>Sakthi Kumaran Pediatrics &amp; Neonatal Care Hospital</b>
+      <p class="tamil" lang="ta">சக்தி குமரன் குழந்தைகள் நல சிறப்பு மருத்துவமனை, பட்டுக்கோட்டை</p>
+    </div>
+    <p>Dr. Raja Ramalingam V · MD (Paed) · Fellowship in Neonatology<br>Established 2015 · © <span id="yr">2026</span></p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const DAYS=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const pad=n=>String(n).padStart(2,'0');
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  let tt;function say(m){const t=$('toast');t.textContent=m;t.hidden=false;clearTimeout(tt);tt=setTimeout(()=>t.hidden=true,2600)}
+
+  /* menu */
+  const burger=$('burger'),links=$('links');
+  burger.addEventListener('click',()=>{const o=links.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu')});
+  links.addEventListener('click',e=>{if(e.target.closest('a')){links.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu')}});
+
+  /* hours in India time */
+  const SESS=[[360,930],[990,1320]];
+  const fmt=m=>{let h=Math.floor(m/60),mm=m%60;const ap=h>=12?'pm':'am';h=h%12||12;return h+(mm?':'+pad(mm):'')+' '+ap};
+  function ist(){const d=new Date(Date.now()+330*60000);return{h:d.getUTCHours(),m:d.getUTCMinutes(),dow:d.getUTCDay(),d:d.getUTCDate(),mo:d.getUTCMonth(),y:d.getUTCFullYear(),iso:d.toISOString().slice(0,10)}}
+  function state(min){
+    for(const[a,b]of SESS) if(min>=a&&min<b) return{open:true,long:'Open now. Closes at '+fmt(b)+'.',short:'Open now · until '+fmt(b)+' IST'};
+    if(min>=SESS[0][1]&&min<SESS[1][0]) return{open:false,long:'Short break. Opens again at '+fmt(SESS[1][0])+'.',short:'Short break · back at '+fmt(SESS[1][0])+' IST'};
+    return{open:false,long:'Closed now. Opens at 6 am'+(min>=SESS[1][1]?' tomorrow':'')+'.',short:'Closed · opens 6 am IST'};
+  }
+  const week=$('week');
+  [1,2,3,4,5,6,0].forEach(d=>{const r=document.createElement('div');r.className='wd';r.dataset.d=d;r.setAttribute('aria-hidden','true');
+    r.innerHTML='<span>'+DAYS[d]+'</span><div class="bar">'+SESS.map(([a,b])=>'<span class="seg" style="left:'+(a/14.4)+'%;width:'+((b-a)/14.4)+'%"></span>').join('')+'</div>';week.appendChild(r)});
+  function tick(){
+    const t=ist(),min=t.h*60+t.m,s=state(min);
+    $('bigclock').textContent=pad(t.h)+':'+pad(t.m);
+    $('today').textContent=DAYS[t.dow]+', '+t.d+' '+months[t.mo];
+    $('stateline').textContent=s.long;
+    $('liveText').textContent=s.short;
+    $('live').classList.toggle('shut',!s.open);
+    document.querySelectorAll('.wd').forEach(r=>{const on=+r.dataset.d===t.dow;r.classList.toggle('today',on);let n=r.querySelector('.nowmark');
+      if(on){if(!n){n=document.createElement('span');n.className='nowmark';r.querySelector('.bar').appendChild(n)}n.style.left='calc('+(min/14.4)+'% - 1px)'}else if(n)n.remove()});
+    $('yr').textContent=t.y;
+  }
+  tick();setInterval(tick,20000);
+
+  $('copyPhone').addEventListener('click',()=>{
+    const fb=()=>{const r=document.createRange();r.selectNodeContents($('phoneTxt'));const s=getSelection();s.removeAllRanges();s.addRange(r);say('Number selected. Copy it with your keyboard.')};
+    try{navigator.clipboard.writeText('+91 87544 42145').then(()=>say('Number copied'),fb)}catch(_){fb()}
+  });
+
+  /* tabs */
+  const tabs=[...document.querySelectorAll('[role="tablist"] [role="tab"]')];
+  function pick(tab){tabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;$(t.getAttribute('aria-controls')).hidden=!on})}
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>pick(t));t.addEventListener('keydown',e=>{
+    let j=null;if(e.key==='ArrowRight')j=(i+1)%tabs.length;if(e.key==='ArrowLeft')j=(i-1+tabs.length)%tabs.length;if(e.key==='Home')j=0;if(e.key==='End')j=tabs.length-1;
+    if(j!==null){e.preventDefault();tabs[j].focus();pick(tabs[j])}})});
+
+  /* vaccine planner */
+  const VAX=[
+    {d:0,label:'At birth',v:'BCG, OPV-0, Hepatitis B-1'},
+    {d:42,label:'6 weeks',v:'DTP-1, IPV-1, Hib-1, Hep B-2, Rotavirus-1, PCV-1'},
+    {d:70,label:'10 weeks',v:'DTP-2, IPV-2, Hib-2, Hep B-3, Rotavirus-2, PCV-2'},
+    {d:98,label:'14 weeks',v:'DTP-3, IPV-3, Hib-3, Hep B-4, Rotavirus-3, PCV-3'},
+    {d:183,label:'6 months',v:'Influenza-1, Typhoid conjugate (6–9 months)'},
+    {d:213,label:'7 months',v:'Influenza-2'},
+    {d:274,label:'9 months',v:'MMR-1'},
+    {d:365,label:'12 months',v:'Hepatitis A-1'},
+    {d:456,label:'15 months',v:'MMR-2, Varicella-1, PCV booster'},
+    {d:487,label:'16–18 months',v:'DTP booster-1, IPV booster, Hib booster'},
+    {d:548,label:'18–19 months',v:'Hepatitis A-2, Varicella-2'},
+    {d:1461,label:'4–6 years',v:'DTP booster-2, IPV booster-2, MMR-3'},
+    {d:3653,label:'10–12 years',v:'Tdap, HPV (2 doses)'}
+  ];
+  const dob=$('dob');
+  const fmtDate=dt=>dt.getUTCDate()+' '+months[dt.getUTCMonth()]+' '+dt.getUTCFullYear();
+  function renderVax(){
+    const t=ist(),today=Date.UTC(t.y,t.mo,t.d);let base=null;
+    if(dob.value){const[y,m,d]=dob.value.split('-').map(Number);base=Date.UTC(y,m-1,d)}
+    let nextFound=false,done=0,due=0;
+    $('vaxList').innerHTML=VAX.map(x=>{
+      if(base===null||base>today) return '<li class="vax"><span class="when">'+x.label+'</span><span class="names">'+x.v+'</span><span class="tag">'+(base>today?'Check the date':'Add date of birth')+'</span></li>';
+      const at=base+x.d*864e5,dt=new Date(at),days=Math.round((at-today)/864e5);let cls,txt;
+      if(days<-60){cls='st-done';txt='Was due '+fmtDate(dt);done++}
+      else if(days<=7){cls='st-due';txt=days<0?'Due now: ask us':(days===0?'Due today':'Due '+fmtDate(dt));due++}
+      else if(!nextFound){cls='st-next';txt='Next · '+fmtDate(dt);nextFound=true}
+      else{cls='';txt=fmtDate(dt)}
+      return '<li class="vax '+cls+'"><span class="when">'+x.label+'</span><span class="names">'+x.v+'</span><span class="tag">'+txt+'</span></li>';
+    }).join('');
+    $('vaxSum').innerHTML=base!==null&&base<=today?'<span style="background:var(--ok-soft);color:var(--ok)">'+done+' likely given</span><span style="background:var(--warn-soft)">'+due+' due around now</span>':'';
+  }
+  try{const s=localStorage.getItem('skp-dob');if(s)dob.value=s}catch(_){}
+  if(!dob.value){const t=ist();dob.value=new Date(Date.UTC(t.y,t.mo-5,t.d)).toISOString().slice(0,10);$('dobHint').hidden=false;dob.addEventListener('input',()=>{$('dobHint').hidden=true},{once:true})}
+  dob.max=ist().iso;
+  dob.addEventListener('input',()=>{renderVax();try{localStorage.setItem('skp-dob',dob.value)}catch(_){}});renderVax();
+
+  /* appointment form */
+  const F={parent:$('f-parent'),phone:$('f-phone'),child:$('f-child'),age:$('f-age'),date:$('f-date'),type:$('f-type'),reason:$('f-reason')};
+  const todayIso=ist().iso;F.date.min=todayIso;
+  {const t=ist();F.date.value=new Date(Date.UTC(t.y,t.mo,t.d+1)).toISOString().slice(0,10)}
+  const banner=$('formBanner');
+  function showBanner(kind,msg){banner.className='banner '+kind;banner.textContent=msg;banner.hidden=false}
+  function values(){return{parent:F.parent.value.trim(),phone:F.phone.value.replace(/[^\d+]/g,''),child:F.child.value.trim(),age:F.age.value.trim(),date:F.date.value,type:F.type.value,session:(document.querySelector('input[name="sess"]:checked')||{}).value||'',reason:F.reason.value.trim().slice(0,600)}}
+  function validate(v){
+    const bad=[];const set=(el,errId,ok)=>{el.setAttribute('aria-invalid',ok?'false':'true');$(errId).hidden=ok;if(!ok)bad.push(el)};
+    set(F.parent,'e-parent',v.parent.length>1);
+    set(F.phone,'e-phone',/^[6-9]\d{9}$/.test(v.phone.replace(/^\+?91/,'').replace(/\D/g,'')));
+    set(F.child,'e-child',v.child.length>0);
+    set(F.date,'e-date',!!v.date&&v.date>=todayIso);
+    if(bad.length)bad[0].focus();return !bad.length;
+  }
+  function waText(v){return 'Hello Dr. Raja Ramalingam V, I would like an appointment.\nParent: '+(v.parent||'-')+'\nMobile: '+(v.phone||'-')+'\nChild: '+(v.child||'-')+(v.age?' ('+v.age+')':'')+'\nVisit: '+v.type+'\nPreferred: '+(v.date||'any day')+', '+v.session+(v.reason?'\nReason: '+v.reason:'')}
+  function syncWa(){$('waBtn').href='https://wa.me/918754442145?text='+encodeURIComponent(waText(values()))}
+  $('book').addEventListener('input',syncWa);syncWa();
+  const niceDate=iso=>{if(!iso)return'';const[y,m,d]=iso.split('-');return +d+' '+months[+m-1]+' '+y};
+  const STATUS={new:'Awaiting call',confirmed:'Confirmed',done:'Visited',cancelled:'Cancelled'};
+
+  let db=null,user=null,uid=null,myItems=[];
+  function renderMine(){
+    $('mine').hidden=!myItems.length;
+    $('mineList').innerHTML=myItems.slice().sort((a,b)=>b.createdAt-a.createdAt).map(r=>
+      '<div class="req"><span><b>'+esc(r.child)+'</b> · '+esc(r.type)+'</span><span class="badge b-'+esc(r.status)+'">'+esc(STATUS[r.status]||r.status)+'</span><span class="meta">'+esc(niceDate(r.date))+', '+esc((r.session||'').split(' (')[0])+'</span></div>').join('');
+  }
+  $('book').addEventListener('submit',async e=>{
+    e.preventDefault();const v=values();if(!validate(v))return;
+    if(!db||!uid){showBanner('warn','Online requests aren’t available here. Use “Send on WhatsApp” or call +91 87544 42145.');return}
+    const btn=$('sendBtn');btn.disabled=true;btn.textContent='Sending…';
+    const item=Object.assign({id:Date.now().toString(36)+Math.random().toString(36).slice(2,6),status:'new',createdAt:Date.now()},v);
+    const ref=db.doc('requests/'+uid);
+    const attempt=async()=>{const snap=await ref.get();const items=((snap.exists&&snap.data().items)||[]).slice();items.push(item);await ref.set({items:items.slice(-30),updatedAt:Date.now()})};
+    try{
+      try{await attempt()}catch(err){if(err&&err.code==='unavailable'){await new Promise(r=>setTimeout(r,600+Math.random()*600));await attempt()}else throw err}
+      showBanner('ok','Request sent for '+v.child+'. The clinic will call '+v.phone+' to confirm a time.');F.reason.value='';say('Request sent');
+    }catch(err){
+      const c=err&&err.code;
+      showBanner('bad',c==='invalid_argument'?'Your access to this page can’t send requests. Use WhatsApp or call +91 87544 42145.':c==='quota_exceeded'?'The request list is full. Please call +91 87544 42145.':'The request didn’t go through. Check your connection and press Send request again, or call +91 87544 42145.');
+    }finally{btn.disabled=false;btn.textContent='Send request'}
+  });
+
+  /* front desk */
+  let deskFilter='open',deskDocs=[];
+  function renderDesk(){
+    const rows=[];deskDocs.forEach(d=>(d.items||[]).forEach(it=>rows.push({doc:d.id,it})));
+    rows.sort((a,b)=>(a.it.date||'').localeCompare(b.it.date||'')||a.it.createdAt-b.it.createdAt);
+    const show=rows.filter(r=>deskFilter==='all'||r.it.status==='new'||r.it.status==='confirmed');
+    if(!show.length){$('deskList').innerHTML='<div class="empty">No open requests. New requests appear here as soon as a parent sends the form.</div>';return}
+    $('deskList').innerHTML=show.map(r=>{const i=r.it;return '<div class="drow"><div><b>'+esc(i.child)+'</b>'+(i.age?' ('+esc(i.age)+')':'')+' · '+esc(i.type)+'<div class="meta">'+esc(niceDate(i.date))+', '+esc(i.session)+(i.reason?'<br>'+esc(i.reason):'')+'</div></div><div><span>'+esc(i.parent)+'</span><div class="meta num" style="user-select:all">'+esc(i.phone)+'</div></div><label class="sr" for="s-'+esc(i.id)+'">Status for '+esc(i.child)+'</label><select id="s-'+esc(i.id)+'" data-doc="'+esc(r.doc)+'" data-id="'+esc(i.id)+'">'+Object.keys(STATUS).map(k=>'<option value="'+k+'"'+(k===i.status?' selected':'')+'>'+STATUS[k]+'</option>').join('')+'</select></div>'}).join('');
+  }
+  $('deskList').addEventListener('change',async e=>{
+    const s=e.target.closest('select');if(!s)return;const ref=db.doc('requests/'+s.dataset.doc);
+    try{const snap=await ref.get();const items=(snap.data().items||[]).map(i=>i.id===s.dataset.id?Object.assign({},i,{status:s.value}):i);await ref.update({items,updatedAt:Date.now()});say('Status saved')}
+    catch(_){say('Status not saved. Try again.')}
+  });
+  document.querySelectorAll('#desk [data-f]').forEach(b=>b.addEventListener('click',()=>{deskFilter=b.dataset.f;document.querySelectorAll('#desk [data-f]').forEach(x=>{const on=x===b;x.setAttribute('aria-pressed',on);x.setAttribute('aria-selected',on)});renderDesk()}));
+
+  (async()=>{
+    try{
+      if(!window.claude||!claude.use)return;
+      [db,user]=await Promise.all([claude.use('db'),claude.use('user')]);
+      if(!db||!user)return;
+      uid=await user.id();
+      if(uid)db.doc('requests/'+uid).onSnapshot(s=>{myItems=(s.exists&&s.data().items)||[];renderMine()},()=>{});
+      if((await user.isOwner())||(await user.canEdit())){$('desk').hidden=false;renderDesk();db.collection('requests').onSnapshot(q=>{deskDocs=q.docs.map(d=>({id:d.id,items:(d.data()||{}).items||[]}));renderDesk()},()=>{})}
+    }catch(_){}
+  })();
+})();
+</script>
+
+</body>
+</html>
